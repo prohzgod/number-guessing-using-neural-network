@@ -29,7 +29,7 @@ model.compile(optimizer='adam',
               loss='sparse_categorical_crossentropy',
               metrics=['accuracy'])
 
-model.fit(x_train, y_train, epochs=3)
+model.fit(x_train, y_train, epochs=10)
 model.save('epic_num_reader.model')
 
 print("Model saved")
@@ -38,3 +38,4 @@ print("Model saved")
 score = model.evaluate(x_test, y_test, verbose=0)
 print('Test loss:', score[0])
 print('Test accuracy:', score[1])
+print("Large ANN Error: %.2f%%" % (100-score[1]*100))
